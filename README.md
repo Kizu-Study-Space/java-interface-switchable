@@ -1,2 +1,10 @@
 # java-interface-switchable
 Java Interface Exercise
+
+- a.) Kopieren Sie den Quellcode von Switchable aus dem Input und definieren Sie die Schnittstelle in einem neuen BlueJ-Projekt. Ergänzen Sie die fehlende JavaDoc und beschreiben Sie die Semantik der vier Methoden gemäss Ihrem Verständnis der Schnittstelle. Denken Sie an die «Ein-Satz-und-Punkt.»-Regel für den jeweils ersten Satz eines Dokumentationsteils.
+- b.) Erstellen Sie die HTML-Dokumentation, und verbessern Sie diese, bis Sie zufrieden sind. Dann vergleichen Sie Ihre Dokumentation (primär inhaltlich) mit anderen Studierenden. Haben Sie das gleiche semantische Verständnis der Schnittstelle?
+- c.) Entwerfen Sie eine einfache Klasse für einen Motor, der mindestens ein- und ausgeschaltet werden kann. Darum soll er auch die Schnittstelle Switchable implementieren. Was passiert bei der Kompilation, wenn Sie den Klassenkopf entsprechend erweitert haben?
+- d.) Implementieren Sie alle Methoden, welche die Schnittstelle verlangt. Da es sich um einen Motor handelt, könnten Sie den Betriebszustand z.B. in rpm (Umdrehungen pro Minute) festhalten. Testen Sie dann den Motor und stellen Sie sicher, dass er sich korrekt ein- und ausschalten lässt.
+- e.) Stellen Sie sich ein (sehr) einfaches Fahrzeug vor. Dieses Fahrzeug soll als Ganzes ebenfalls «Switchable» sein, sprich Sie können es ein- und ausschalten. Und natürlich hat das Auto (neben anderen Komponenten wie Licht, Scheibenwischer, Klima etc.) auch einen Motor. Modellieren Sie diese Situation mit einer Skizze. Versuchen Sie diese in UML zu zeichnen (von Hand). Vorlagen dazu finden Sie in verschiedenen Inputs.
+- f.) Implementieren Sie das skizzierte Modell (im Minimum das Fahrzeug, den Motor und noch eine beliebige weitere Komponente). Welche Klassen implementieren alle die Schnittstelle Switchable?
+- g.) Überlegen Sie zuerst, und probieren Sie es erst dann aus: Können Sie für die verschiedenen Komponenten des Fahrzeuges (Motor, Licht etc.) auch den Typ des Interfaces verwenden? Das ist Polymorphie
