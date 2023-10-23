@@ -1,4 +1,4 @@
-package switchable;
+package ch.hslu.oop.switchables;
 
 /**
 * Interface for implementing objects that can have a running state. Switch them off and on.
