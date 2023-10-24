@@ -2,9 +2,9 @@ package ch.hslu.oop.switchables;
 
 public class Motor implements Switchable {
 
-    int currentRpm;
-    int idleGas;
-    int maxRpm;
+    private int currentRpm;
+    private final int idleGas;
+    private final int maxRpm;
 
     public Motor(final int idleGas, final int maxRpm) {
         this.currentRpm = 0;
