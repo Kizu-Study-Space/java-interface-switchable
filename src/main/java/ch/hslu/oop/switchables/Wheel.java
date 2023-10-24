@@ -1,7 +1,8 @@
 package ch.hslu.oop.switchables;
 
-public class Wheel {
+public class Wheel implements Nameable {
     private double currentAirPressure;
+    private String name;
 
     public Wheel() {
         this.currentAirPressure = 2.5;
@@ -17,5 +18,15 @@ public class Wheel {
 
     public double getCurrentAirPressure() {
         return this.currentAirPressure;
+    }
+
+    @Override
+    public String getName() {
+        return this.name;
+    }
+
+    @Override
+    public void setName(String name) {
+        this.name = name;
     }
 }

@@ -81,4 +81,17 @@ public class VehicleTest {
         assertTrue(vehicle.getRightLight().isSwitchedOff());
         assertTrue(vehicle.isSwitchedOff());
     }
+
+    @Test
+    public void testGetName() {
+        Vehicle vehicle = new Vehicle(new Motor(), new Wheel(), new Wheel(), new Wheel(), new Wheel(), new Light(), new Light());
+        vehicle.setName("Test");
+        assertEquals("Test", vehicle.getName());
+    }
+
+    @Test void testSetName() {
+        Vehicle vehicle = new Vehicle(new Motor(), new Wheel(), new Wheel(), new Wheel(), new Wheel(), new Light(), new Light());
+        vehicle.setName("Test");
+        assertEquals("Test", vehicle.getName());
+    }
 }

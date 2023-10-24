@@ -1,11 +1,12 @@
 package ch.hslu.oop.switchables;
 
-public class Motor implements CountingSwitchable {
+public class Motor implements CountingSwitchable, Nameable {
 
     int currentRpm;
     int idleGas;
     int maxRpm;
     long switchCount;
+    private String name;
 
     public Motor(final int idleGas, final int maxRpm) {
         this.currentRpm = 0;
@@ -54,5 +55,15 @@ public class Motor implements CountingSwitchable {
 
     public int getMaxRpm() {
         return maxRpm;
+    }
+
+    @Override
+    public String getName() {
+        return this.name;
+    }
+
+    @Override
+    public void setName(String name) {
+        this.name = name;
     }
 }

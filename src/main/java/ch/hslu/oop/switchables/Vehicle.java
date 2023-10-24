@@ -1,6 +1,6 @@
 package ch.hslu.oop.switchables;
 
-public class Vehicle implements Switchable {
+public class Vehicle implements Switchable, Nameable {
 
     private final Motor motor;
     private final Wheel frontRightWheel;
@@ -9,6 +9,7 @@ public class Vehicle implements Switchable {
     private final Wheel backLeftWheel;
     private final Light leftLight;
     private final Light rightLight;
+    private String name;
 
     private boolean isRunning;
 
@@ -72,5 +73,15 @@ public class Vehicle implements Switchable {
 
     public Light getRightLight() {
         return this.rightLight;
+    }
+
+    @Override
+    public String getName() {
+        return this.name;
+    }
+
+    @Override
+    public void setName(String name) {
+        this.name = name;
     }
 }

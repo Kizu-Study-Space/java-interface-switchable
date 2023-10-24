@@ -23,4 +23,18 @@ public class WheelTest {
         wheel.deflateBy(0.5);
         assertEquals(2.0, wheel.getCurrentAirPressure());
     }
+
+    @Test
+    public void testGetName() {
+        Wheel wheel = new Wheel();
+        wheel.setName("Test");
+        assertEquals("Test", wheel.getName());
+    }
+
+    @Test
+    public void testSetName() {
+        Wheel wheel = new Wheel();
+        wheel.setName("Test");
+        assertEquals("Test", wheel.getName());
+    }
 }

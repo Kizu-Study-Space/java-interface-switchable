@@ -1,6 +1,8 @@
 package ch.hslu.oop.switchables;
 
 import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class LightTest {
@@ -32,5 +34,19 @@ public class LightTest {
         light.switchOn();
         light.switchOff();
         assertTrue(light.isSwitchedOff());
+    }
+
+    @Test
+    public void testGetName() {
+        Light light = new Light();
+        light.setName("Test");
+        assertEquals("Test", light.getName());
+    }
+
+    @Test
+    public void testSetName() {
+        Light light = new Light();
+        light.setName("Test");
+        assertEquals("Test", light.getName());
     }
 }

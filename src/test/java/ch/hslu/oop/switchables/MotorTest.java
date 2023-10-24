@@ -60,4 +60,18 @@ public class MotorTest {
         motor.switchOff();
         assertEquals(2, motor.getSwitchCount());
     }
+
+    @Test
+    public void testGetName() {
+        Motor motor = new Motor(1000, 5000);
+        motor.setName("Test");
+        assertEquals("Test", motor.getName());
+    }
+
+    @Test
+    public void testSetName() {
+        Motor motor = new Motor(1000, 5000);
+        motor.setName("Test");
+        assertEquals("Test", motor.getName());
+    }
 }
