@@ -2,15 +2,16 @@ package ch.hslu.oop.switchables;
 
 public class Motor implements CountingSwitchable {
 
-    int currentRpm;
-    int idleGas;
-    int maxRpm;
-    long switchCount;
+    private int currentRpm;
+    private final int idleGas;
+    private final int maxRpm;
+    private long switchCount;
 
     public Motor(final int idleGas, final int maxRpm) {
         this.currentRpm = 0;
         this.idleGas = idleGas;
         this.maxRpm = maxRpm;
+        this.switchCount = 0;
     }
 
     public Motor () {
