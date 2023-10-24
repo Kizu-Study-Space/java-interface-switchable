@@ -34,17 +34,20 @@ public class Vehicle implements Switchable, Nameable {
 
     @Override
     public void switchOff() {
-
+        this.motor.switchOff();
+        this.leftLight.switchOff();
+        this.rightLight.switchOff();
+        this.isRunning = false;
     }
 
     @Override
     public boolean isSwitchedOn() {
-        return false;
+        return isRunning;
     }
 
     @Override
     public boolean isSwitchedOff() {
-        return false;
+        return !isRunning;
     }
 
     public Motor getMotor() {
