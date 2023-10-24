@@ -1,10 +1,11 @@
 package ch.hslu.oop.switchables;
 
-public class Motor implements Switchable {
+public class Motor implements CountingSwitchable {
 
     int currentRpm;
     int idleGas;
     int maxRpm;
+    long switchCount;
 
     public Motor(final int idleGas, final int maxRpm) {
         this.currentRpm = 0;
@@ -19,11 +20,13 @@ public class Motor implements Switchable {
     @Override
     public void switchOn() {
         this.currentRpm = this.idleGas;
+        this.switchCount++;
     }
 
     @Override
     public void switchOff() {
         this.currentRpm = 0;
+        this.switchCount++;
     }
 
     @Override
@@ -34,6 +37,11 @@ public class Motor implements Switchable {
     @Override
     public boolean isSwitchedOff() {
         return !this.isSwitchedOn();
+    }
+
+    @Override
+    public long getSwitchCount() {
+        return this.switchCount;
     }
 
     public int getCurrentRpm() {

@@ -52,4 +52,12 @@ public class MotorTest {
         motor.switchOff();
         assertTrue(motor.isSwitchedOff());
     }
+
+    @Test
+    public void testGetSwitchCount() {
+        Motor motor = new Motor(1000, 5000);
+        motor.switchOn();
+        motor.switchOff();
+        assertEquals(2, motor.getSwitchCount());
+    }
 }
