@@ -1,6 +1,6 @@
 package ch.hslu.oop.switchables;
 
-public class Vehicle implements Switchable, Nameable {
+public final class Vehicle implements Switchable, Nameable {
 
     private final Motor motor;
     private final Wheel frontRightWheel;

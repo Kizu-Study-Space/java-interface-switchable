@@ -1,6 +1,6 @@
 package ch.hslu.oop.switchables;
 
-public class Motor implements CountingSwitchable, Nameable {
+public final class Motor implements CountingSwitchable, Nameable {
 
     private String name;
     private int currentRpm;

@@ -1,6 +1,6 @@
 package ch.hslu.oop.switchables;
 
-public class Light implements Switchable, Nameable {
+public final class Light implements Switchable, Nameable {
 
     private boolean isRunning;
     private String name;

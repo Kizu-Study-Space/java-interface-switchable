@@ -1,6 +1,6 @@
 package ch.hslu.oop.switchables;
 
-public class Wheel implements Nameable {
+public final class Wheel implements Nameable {
     private double currentAirPressure;
     private String name;
 
