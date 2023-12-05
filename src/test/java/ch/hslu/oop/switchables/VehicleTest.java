@@ -99,9 +99,22 @@ public final class VehicleTest {
         assertEquals("Test", vehicle.getName());
     }
 
-    @Test void testSetName() {
+    @Test
+    public void testSetName() {
         Vehicle vehicle = new Vehicle(new Motor(), new Wheel(), new Wheel(), new Wheel(), new Wheel(), new Light(), new Light());
         vehicle.setName("Test");
         assertEquals("Test", vehicle.getName());
+    }
+
+    @Test
+    public void testMotorStateChange() {
+        Vehicle vehicle = new Vehicle(new Motor(), new Wheel(), new Wheel(), new Wheel(), new Wheel(), new Light(), new Light());
+        assertTrue(vehicle.isSwitchedOff());
+
+        vehicle.getMotor().switchOn();
+        assertTrue(vehicle.isSwitchedOn());
+
+        vehicle.getMotor().switchOff();
+        assertTrue(vehicle.isSwitchedOff());
     }
 }

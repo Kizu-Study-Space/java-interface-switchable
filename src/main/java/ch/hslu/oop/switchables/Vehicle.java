@@ -1,6 +1,6 @@
 package ch.hslu.oop.switchables;
 
-public final class Vehicle implements Switchable, Nameable {
+public final class Vehicle implements Switchable, Nameable, MotorStateListener {
 
     private final Motor motor;
     private final Wheel frontRightWheel;
@@ -15,6 +15,7 @@ public final class Vehicle implements Switchable, Nameable {
 
     public Vehicle(Motor motor, Wheel frontRightWheel, Wheel frontLeftWheel, Wheel backRightWheel, Wheel backLeftWheel, Light leftLight, Light rightLight) {
         this.motor = motor;
+        this.motor.addMotorStateListener(this);
         this.frontRightWheel = frontRightWheel;
         this.frontLeftWheel = frontLeftWheel;
         this.backRightWheel = backRightWheel;
@@ -22,6 +23,11 @@ public final class Vehicle implements Switchable, Nameable {
         this.leftLight = leftLight;
         this.rightLight = rightLight;
         this.state = SwitchableState.OFF;
+    }
+
+    @Override
+    public void motorStateChange(MotorStateEvent motorStateEvent) {
+        this.state = motorStateEvent.getMotorState();
     }
 
     @Override

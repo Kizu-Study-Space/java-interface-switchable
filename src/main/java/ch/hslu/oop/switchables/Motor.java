@@ -1,5 +1,8 @@
 package ch.hslu.oop.switchables;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public final class Motor implements CountingSwitchable, Nameable {
 
     private String name;
@@ -8,6 +11,7 @@ public final class Motor implements CountingSwitchable, Nameable {
     private final int maxRpm;
     private long switchCount;
     private SwitchableState state;
+    private final List<MotorStateListener> stateListeners = new ArrayList<>();
 
     public Motor(final int idleGas, final int maxRpm) {
         this.currentRpm = 0;
@@ -21,6 +25,14 @@ public final class Motor implements CountingSwitchable, Nameable {
         this(1000, 5000);
     }
 
+    public void addMotorStateListener(MotorStateListener stateListener) {
+        this.stateListeners.add(stateListener);
+    }
+
+    private void fireMotorStateEvent() {
+        this.stateListeners.forEach((listener) -> listener.motorStateChange(new MotorStateEvent(this.state)) );
+    }
+
     public SwitchableState getState() {
         return this.state;
     }
@@ -30,6 +42,7 @@ public final class Motor implements CountingSwitchable, Nameable {
         this.currentRpm = this.idleGas;
         this.switchCount++;
         this.state = SwitchableState.ON;
+        this.fireMotorStateEvent();
     }
 
     @Override
@@ -37,6 +50,7 @@ public final class Motor implements CountingSwitchable, Nameable {
         this.currentRpm = 0;
         this.switchCount++;
         this.state = SwitchableState.OFF;
+        this.fireMotorStateEvent();
     }
 
     @Override
