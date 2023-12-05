@@ -3,7 +3,7 @@ package ch.hslu.oop.switchables;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-public class VehicleTest {
+public final class VehicleTest {
 
     @Test
     public void testGetMotor() {

@@ -3,7 +3,7 @@ package ch.hslu.oop.switchables;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class WheelTest {
+public final class WheelTest {
     @Test
     public void testGetCurrentAirPressure() {
         Wheel wheel = new Wheel();

@@ -7,28 +7,36 @@ public final class Motor implements CountingSwitchable, Nameable {
     private final int idleGas;
     private final int maxRpm;
     private long switchCount;
+    private SwitchableState state;
 
     public Motor(final int idleGas, final int maxRpm) {
         this.currentRpm = 0;
         this.idleGas = idleGas;
         this.maxRpm = maxRpm;
         this.switchCount = 0;
+        this.state = SwitchableState.OFF;
     }
 
     public Motor () {
         this(1000, 5000);
     }
 
+    public SwitchableState getState() {
+        return this.state;
+    }
+
     @Override
     public void switchOn() {
         this.currentRpm = this.idleGas;
         this.switchCount++;
+        this.state = SwitchableState.ON;
     }
 
     @Override
     public void switchOff() {
         this.currentRpm = 0;
         this.switchCount++;
+        this.state = SwitchableState.OFF;
     }
 
     @Override

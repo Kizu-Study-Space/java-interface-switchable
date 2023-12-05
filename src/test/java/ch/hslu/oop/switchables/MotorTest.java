@@ -3,7 +3,7 @@ package ch.hslu.oop.switchables;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-public class MotorTest {
+public final class MotorTest {
 
     @Test
     public void testGetIdleGas() {
@@ -73,5 +73,15 @@ public class MotorTest {
         Motor motor = new Motor(1000, 5000);
         motor.setName("Test");
         assertEquals("Test", motor.getName());
+    }
+
+    @Test
+    public void testGetState() {
+        Motor motor = new Motor(1000, 5000);
+        assertEquals(SwitchableState.OFF, motor.getState());
+        motor.switchOn();
+        assertEquals(SwitchableState.ON, motor.getState());
+        motor.switchOff();
+        assertEquals(SwitchableState.OFF, motor.getState());
     }
 }

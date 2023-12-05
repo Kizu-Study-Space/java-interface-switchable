@@ -2,31 +2,31 @@ package ch.hslu.oop.switchables;
 
 public final class Light implements Switchable, Nameable {
 
-    private boolean isRunning;
+    private SwitchableState state;
     private String name;
 
     public Light() {
-        this.isRunning = false;
+        this.state = SwitchableState.OFF;
     }
 
     @Override
     public void switchOn() {
-        this.isRunning = true;
+        this.state = SwitchableState.ON;
     }
 
     @Override
     public void switchOff() {
-        this.isRunning = false;
+        this.state = SwitchableState.OFF;
     }
 
     @Override
     public boolean isSwitchedOn() {
-        return isRunning;
+        return state == SwitchableState.ON;
     }
 
     @Override
     public boolean isSwitchedOff() {
-        return !isRunning;
+        return state == SwitchableState.OFF;
     }
 
     @Override
